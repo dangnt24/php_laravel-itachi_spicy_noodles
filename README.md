@@ -1,66 +1,69 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1>🍜 Itachi Spicy Noodles - Hệ thống quản lý món mì cay</h1>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<p>Chào mừng bạn đến với dự án <strong>Itachi Spicy Noodles</strong>! Đây là hệ thống giúp bạn quản lý và thưởng thức các món mì cay một cách trọn vẹn nhất. Hãy làm theo hướng dẫn dưới đây để cài đặt và chạy dự án.</p>
 
-## About Laravel
+<h2>🚀 Bắt đầu nào!</h2>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<h3>1. Tạo Database</h3>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<p>Đầu tiên, hãy tạo một database mới trên MySQL của bạn với tên:</p>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<pre><code>itachi_spicy_noodles</code></pre>
 
-## Learning Laravel
+<h3>2. Import Database</h3>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<p>Sau khi tạo xong, import file <code>itachi_spicy_noodles.sql</code> vào database <code>itachi_spicy_noodles</code> bạn vừa tạo:</p>
+<ul>
+    <li>Mở <strong>phpMyAdmin</strong> hoặc một công cụ quản lý database khác.</li>
+    <li>Chọn database <code>itachi_spicy_noodles</code>.</li>
+    <li>Vào tab <strong>Import</strong> và chọn file <code>itachi_spicy_noodles.sql</code>.</li>
+    <li>Nhấn <strong>Go</strong> để import dữ liệu.</li>
+</ul>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<h3>3. Cấu hình file <code>.env</code></h3>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<p>Cập nhật thông tin cấu hình trong file <code>.env</code> của dự án để kết nối đúng với database:</p>
 
-## Laravel Sponsors
+<pre><code>DB_DATABASE=itachi_spicy_noodles
+DB_USERNAME=your_db_username      # Thay bằng username MySQL của bạn
+DB_PASSWORD=your_db_password      # Thay bằng password MySQL của bạn
+</code></pre>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<p><strong>Lưu ý:</strong> Đảm bảo rằng bạn đã khởi động MySQL trong XAMPP hoặc dịch vụ MySQL cục bộ của bạn.</p>
 
-### Premium Partners
+<h3>4. Đăng nhập tài khoản</h3>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+<h4>Tài khoản người dùng (User)</h4>
+<p>Sử dụng thông tin dưới đây để đăng nhập:</p>
+<ul>
+    <li><strong>Username:</strong> <code>user</code></li>
+    <li><strong>Password:</strong> <code>123</code></li>
+</ul>
 
-## Contributing
+<h4>Tài khoản quản trị (Admin)</h4>
+<p>Để truy cập trang quản trị, thêm <code>/admin</code> vào đường dẫn host của bạn. Ví dụ: <code>http://localhost/itachi_spicy_noodles/admin</code>.</p>
+<ul>
+    <li><strong>Username:</strong> <code>admin</code></li>
+    <li><strong>Password:</strong> <code>admin</code></li>
+</ul>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<hr>
 
-## Code of Conduct
+<h3>🛠️ Các bước bổ sung (Nếu có)</h3>
+<ul>
+    <li>Nếu cần cài đặt các thư viện PHP, hãy chạy lệnh <code>composer install</code>.</li>
+    <li>Để cài đặt các gói frontend (nếu có), chạy lệnh <code>npm install</code>.</li>
+    <li>Khởi động lại server sau khi cấu hình <code>.env</code>.</li>
+</ul>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<hr>
 
-## Security Vulnerabilities
+<h3>🎉 Hoàn tất</h3>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<p>Bây giờ, bạn đã sẵn sàng để thưởng thức và quản lý <strong>Itachi Spicy Noodles</strong>! Hãy tận hưởng và cảm nhận sự thú vị của món mì cay nhé! 🍲</p>
 
-## License
+<hr>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<h3>📞 Hỗ trợ</h3>
+
+<p>Nếu bạn gặp bất kỳ vấn đề nào trong quá trình cài đặt, đừng ngần ngại liên hệ với chúng tôi qua email hoặc tạo issue trên GitHub. Chúc bạn thành công!</p>
