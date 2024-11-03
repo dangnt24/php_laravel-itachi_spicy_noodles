@@ -52,7 +52,6 @@ DB_PASSWORD=your_db_password      # Thay bằng password MySQL của bạn
 <h3>🛠️ Các bước bổ sung (Nếu có)</h3>
 <ul>
     <li>Nếu cần cài đặt các thư viện PHP, hãy chạy lệnh <code>composer install</code>.</li>
-    <li>Để cài đặt các gói frontend (nếu có), chạy lệnh <code>npm install</code>.</li>
     <li>Khởi động lại server sau khi cấu hình <code>.env</code>.</li>
 </ul>
 
