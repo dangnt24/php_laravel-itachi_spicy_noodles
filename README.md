@@ -1,4 +1,4 @@
-<h1>🍜 Itachi Spicy Noodles - Hệ thống quản lý món mì cay</h1>
+<h1>🍜 Itachi Spicy Noodles - Web kinh doanh và quản lý món mì cay</h1>
 
 <p>Chào mừng bạn đến với dự án <strong>Itachi Spicy Noodles</strong>! Đây là hệ thống giúp bạn quản lý và thưởng thức các món mì cay một cách trọn vẹn nhất. Hãy làm theo hướng dẫn dưới đây để cài đặt và chạy dự án.</p>
 
