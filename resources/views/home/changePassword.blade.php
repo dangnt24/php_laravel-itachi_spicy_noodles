@@ -64,4 +64,9 @@
             msgRepassword.innerText = repassword.validationMessage;
         }
     </script>
+    <style>
+        #body {
+            margin: auto !important;
+        }
+    </style>
 @endsection

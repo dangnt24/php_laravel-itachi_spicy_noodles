@@ -370,7 +370,12 @@ class HomeController extends Controller
     }
 
     public function cancelOrder(Request $req) {
-        DB::table("orders")->where("o_id", $req->id)->update(["status" => "To Cancel", "reason" => $req->reason, 'updated_at' => now()]);
+        DB::table("orders")->where("o_id", $req->id)->update([
+            "status" => "To Cancel", 
+            "pre_status" => $req->status,  
+            "reason" => $req->reason,
+            "updated_at" => now()
+        ]);
 
         Session::put("message", "Hãy chờ phản hồi nhé.");
         Session::put("msgType", "success");

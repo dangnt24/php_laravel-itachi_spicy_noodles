@@ -1,13 +1,13 @@
 @extends('layouts.adminLayout');
 @section('adminContent')
-    <div class="container mt-3">
+    <div class="container mt-3" style="max-width: 500px;">
         <div class="row">
-            <div class="col-lg-6 col-md-12 col-12 text-center">
+            <div class="col-12 text-center">
                 <h2>Change Password</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6 col-md-12 col-12 col-sm-offset-3">
+            <div class="col-12 col-sm-offset-3">
                 <p class="text-center mb-3">Use the form below to change your password. Your password cannot be the same as your
                     username.</p>
 
@@ -65,4 +65,11 @@
             msgRepassword.innerText = repassword.validationMessage;
         }
     </script>
+    <style>
+        footer.footer {
+            position: fixed;
+            bottom: 0;
+            width: 90%; 
+        }
+    </style>
 @endsection
