@@ -34,10 +34,10 @@ Route::get('/profile', [HomeController::class, 'profile']);
 Route::get('/editProfile', [HomeController::class, 'showFormEditProfile']);
 Route::post('/editProfile', [HomeController::class, 'editProfile']);
 Route::get('/search', [HomeController::class, 'search']);
-Route::get('/myOrders', [HomeController::class, 'myOrders']);
-Route::get('/myOrderDetails', [HomeController::class, 'myOrderDetails']);
+Route::get('/myOrders', [HomeController::class, 'myOrders'])->name('myOrders');
+Route::get('/myOrderDetails', [HomeController::class, 'myOrderDetails'])->name('myOrderDetails');
 Route::post('/submitReview', [HomeController::class, 'submitReview']);
-Route::get('/receivedStatus', [HomeController::class, 'receivedStatus']);
+Route::get('/receivedStatus', [HomeController::class, 'receivedStatus'])->name('receivedStatus');
 Route::post('/cancelOrder', [HomeController::class, 'cancelOrder']);
 
 // Account

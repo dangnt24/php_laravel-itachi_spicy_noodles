@@ -9,14 +9,14 @@
 </head>
 <body>
     <div style="background-color: #fff; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 10000;">
-        <section class="vh-100" style="background-color: rgbA(80, 139, 252, 0.8);">
+        <section class="vh-100" style="background-image: url({{ asset('BE/img/banners/admin.png') }}); background-repeat: no-repeat; background-size: cover;">
             <div class="container py-3 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card shadow-2-strong" style="background-color: #3d3d3d; border-radius: 50px; border-color: transparent;">
                         <div class="card-body p-5 text-center">
         
-                            <h3 class="mb-4">Sign in</h3>
+                            <h3 class="mb-4 text-white">Sign in</h3>
         
                             <form method="post" name="loginAdmin" id="loginAdmin" class="needs-validation" novalidate>
                                 {{ csrf_field() }}
@@ -41,7 +41,7 @@
                                     ?>
                                 </span>
         
-                                <button class="btn btn-primary btn-lg btn-block rounded-pill" id="login" name="login" type="submit" style="width: 80%;" onclick=loginValidate()>Login</button>
+                                <button class="btn btn-primary btn-lg btn-block rounded-pill" id="login" name="login" type="submit" style="width: 80%; background-color: #50bdd0;" onclick=loginValidate()>Login</button>
                             </form>
                         </div>
                     </div>
@@ -75,5 +75,10 @@
             })
     })()
     </script>
+    <style>
+        #username, #password {
+            border-radius: 50px;
+        }
+    </style>
 </body>
 </html>

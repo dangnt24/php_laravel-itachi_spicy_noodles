@@ -3,7 +3,7 @@
     <div class="container px-5 py-3" id="myOrderDetails">
         <div class="d-flex justify-content-between pb-5">
             <div>
-                <a href="/myOrders" class="a-reset text-muted"><i class="fa-solid fa-angle-left"></i> TRỞ LẠI</a>
+                <a href="{{ route('myOrders') }}" class="a-reset text-muted"><i class="fa-solid fa-angle-left"></i> TRỞ LẠI</a>
             </div>
             @php
                 $status = [
@@ -112,7 +112,7 @@
                 </div>
                 <div class="">
                     @if ($od->status == 'To Receive')
-                        <a href="/receivedStatus?id={{ $orderItem->o_id }}" class="btn btn-danger px-5"
+                        <a href="{{ route('receivedStatus', ['id' => $orderItem->o_id]) }}" class="btn btn-danger px-5"
                             onclick="return confirm('Chắc chắn rằng đơn hàng đã giao đến bạn và bạn đã nhận được hàng?')">Đã Nhận
                             Được Hàng</a>
                     @elseif ($od->status == 'To Review')
@@ -125,6 +125,7 @@
                         <form action="{{ url('/cancelOrder') }}" method="post">
                             @csrf
                             <input type="hidden" name="id" value="{{ $orderItem->o_id }}">
+                            <input type="hidden" name="status" value="{{ $orderItem->status }}">
                             <div class="text-end">
                                 <input type="text" name="reason" placeholder="Lý do" class="form-control" required>
                                 <button type="submit" class="btn btn-outline-secondary mt-2">Hủy Đơn Hàng</button>

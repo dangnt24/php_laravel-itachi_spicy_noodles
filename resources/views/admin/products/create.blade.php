@@ -1,7 +1,7 @@
 @extends("layouts.adminLayout")
 @section("adminContent")
 	<div style="margin-bottom: calc(100vh - 450px);">
-		<div class="modal-dialog">
+		<div class="modal-dialog" style="max-width: 90%;">
 			<div class="modal-content">
 				<form method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
@@ -10,14 +10,41 @@
 						<a role="button" href="{{ URL::to('/admin/products') }}" class="close" aria-hidden="true">&times;</a>
 					</div>
 					<div class="modal-body">
-						<div class="form-group">
-							<label>Name</label>
-							<input type="text" class="form-control" name="name" required>
-						</div>	
-						<div class="form-group">
-							<label>Price</label>
-							<input type="text" class="form-control" name="price" required>
-						</div>	
+						<div class="row">
+							<div class="col-md-9 col-12">
+								<div class="form-group">
+									<label>Name</label>
+									<input type="text" class="form-control" name="name" required>
+								</div>
+							</div>
+							<div class="col-md-3 col-12">
+								<div class="form-group">
+									<label>Price</label>
+									<input type="text" class="form-control" name="price" required>
+								</div>	
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 col-12">
+								<div class="form-group">
+									<label>Category</label>
+									<select name="c_id" class="form-control text-dark">
+										@foreach($categories as $category)
+										<option value="{{ $category->c_id }}">{{ $category->c_name }}</option>
+										@endforeach
+									</select>
+								</div>	
+							</div>
+							<div class="col-md-6 col-12">
+								<div class="form-group">
+									<label>Outstanding</label>
+									<select name="outstanding" class="form-control text-dark">
+										<option value="0">No</option>
+										<option value="1">Yes</option>
+									</select>
+								</div>
+							</div>						
+						</div>
 						<div class="form-group">
 							<label>Description</label>
 							<textarea name="description"cols="30" rows="4" class="form-control" required></textarea>
@@ -25,21 +52,6 @@
 						<div class="form-group">
 							<label>Image</label>
 							<input type="file" class="form-control" name="image" required>
-						</div>	
-						<div class="form-group">
-							<label>Category</label>
-							<select name="c_id" class="form-control text-dark">
-								@foreach($categories as $category)
-								<option value="{{ $category->c_id }}">{{ $category->c_name }}</option>
-								@endforeach
-							</select>
-						</div>	
-						<div class="form-group">
-							<label>Outstanding</label>
-							<select name="outstanding" class="form-control text-dark">
-								<option value="0">No</option>
-								<option value="1">Yes</option>
-							</select>
 						</div>
 					</div>
 					<div class="modal-footer">

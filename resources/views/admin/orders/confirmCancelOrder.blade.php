@@ -60,7 +60,7 @@
                                 <td>{{ $order->reason }}</td>
                                 <td class="text-center">
                                     <a href="{{ URL::to("/admin/orders/confirmCancelOrderStatus?id=".$order->o_id."&status=Canceled") }}" class=""><i class="fa-solid fa-circle-check fs-1 text-primary"></i></a>
-                                    <a onclick="return confirm('Do you want cancel confirmation of this order?')" href="{{ URL::to("/admin/orders/confirmCancelOrderStatus?id=".$order->o_id."&status=To Receive") }}" class=""><i class="fa-solid fa-circle-xmark fs-1 text-danger"></i></a>
+                                    <a onclick="return confirm('Do you want cancel confirmation of this order?')" href="{{ URL::to("/admin/orders/confirmCancelOrderStatus?id=".$order->o_id."&status=".$order->pre_status) }}" class=""><i class="fa-solid fa-circle-xmark fs-1 text-danger"></i></a>
                                 </td>
                             </tr>
                             @endforeach

@@ -5,7 +5,7 @@
         @foreach ($orders as $order)
             <div class="mt-3" style="border: 1px solid red">
                 <div class="d-flex justify-content-between p-3 pb-0">
-                    <div><a href="/myOrderDetails?id={{ $order[0]->o_id }}" class="fw-bold">Mã Đơn Hàng:
+                    <div><a href="{{ route('myOrderDetails', ['id' => $order[0]->o_id]) }}" class="fw-bold">Mã Đơn Hàng:
                             #{{ $order[0]->o_id }}</a></div>
                     @php
                         $status = [
@@ -68,7 +68,7 @@
         </div>
         <div class="">
             @if ($od->status == 'To Receive')
-                <a href="/receivedStatus?id={{ $order[0]->o_id }}" class="btn btn-danger px-5"
+                <a href="{{ route('receivedStatus', ['id' => $order[0]->o_id]) }}" class="btn btn-danger px-5"
                     onclick="return confirm('Chắc chắn rằng đơn hàng đã giao đến bạn và bạn đã nhận được hàng?')">Đã Nhận
                     Được Hàng</a>
             @elseif ($od->status == 'To Review')
@@ -81,7 +81,9 @@
                 <form action="{{ url('/cancelOrder') }}" method="post">
                     @csrf
                     <input type="hidden" name="id" value="{{ $order[0]->o_id }}">
+                    <input type="hidden" name="status" value="{{ $order[0]->status }}">
                     <div class="text-end">
+                    <input type="hidden" name="id" value="{{ $order[0]->o_id }}">
                         <input type="text" name="reason" placeholder="Lý do" class="form-control" required>
                         <button type="submit" class="btn btn-outline-secondary mt-2">Hủy Đơn Hàng</button>
                     </div>
