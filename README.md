@@ -67,7 +67,9 @@ DB_PASSWORD=your_db_password      # Thay bằng password MySQL của bạn
 
 <p>Nếu bạn gặp bất kỳ vấn đề nào trong quá trình cài đặt, đừng ngần ngại liên hệ với chúng tôi qua email hoặc tạo issue trên GitHub. Chúc bạn thành công!</p>
 <h2>HOW TO INSTALL</h2>
-- composer install
-- Chỉnh sửa .env: cp .env.example .env
-- Tạo ket: php artisan key:generate
-- Run: php artisan serve
+<ul>
+    <li>- composer install</li>
+    <li>- Chỉnh sửa .env: cp .env.example .env</li>
+    <li>- Tạo ket: php artisan key:generate</li>
+    <li>- Run: php artisan serve</li>
+</ul>
